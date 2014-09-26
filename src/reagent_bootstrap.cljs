@@ -54,19 +54,28 @@
    [:div {:class "panel-group" :id id}]
    items))
 
-(defn nav-item [link title active?]
-  (vec (concat [:li] (if active? [{:class "active"}]) [[:a {:href link} title]])))
+(defn nav-item
+  ([link title]
+    (nav-item title false))
+  ([link title active?]
+    (vec (concat [:li] (if active? [{:class "active"}]) [[:a {:href link} title]]))))
 
 (defn nav-pills [items &]
   (vec (concat [:ul {:class "nav nav-pills"}] items)))
 
-(defn panel [title content style]
-  {:pre [(contains? panel-styles style)]}
-  "Panel item."
-  [:div {:class (str "panel " (panel-styles style))}
-    [:div {:class "panel-heading"}
-      [:h3 {:class "panel-title"} title]]
-    [:div {:class "panel-body"} content]])
+(defn panel
+  ([content]
+    [:div {:class "panel panel-default"}
+      [:div {:class "panel-body"} content]])
+  ([title content]
+    (panel title content :default))
+  ([title content style]
+    {:pre [(contains? panel-styles style)]}
+    "Panel item."
+    [:div {:class (str "panel " (panel-styles style))}
+      [:div {:class "panel-heading"}
+        [:h3 {:class "panel-title"} title]]
+      [:div {:class "panel-body"} content]]))
 
 (defn accordion-item [parent-id title content]
   (let [id (rand-uuid-str)]

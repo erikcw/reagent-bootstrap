@@ -103,7 +103,11 @@
       (try
         (b/panel "foo" "bar" :my-style)
         (is 1 2) ; Should not reach this line
-      (catch js/Error e)))))
+      (catch js/Error e)))
+    (it "should create panel without title if only one attribute is given"
+      (let [panel (b/panel [:p "Long text goes here.."])]
+        (is (hiccup-contains? panel "panel-title") false)
+        (is (hiccup-contains? panel "Long text goes here..") true)))))
 
 (let [accordion-id "parent-id"
       footer "This is footer"
