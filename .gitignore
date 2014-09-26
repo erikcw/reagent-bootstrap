@@ -1,0 +1,15 @@
+pom.xml
+*jar
+/lib/
+/js/
+*js
+/classes/
+/out/
+/target/
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.nrepl-port
+war_room.js
+harness
+node_modules
