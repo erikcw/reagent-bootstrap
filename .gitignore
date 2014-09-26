@@ -2,7 +2,7 @@ pom.xml
 *jar
 /lib/
 /js/
-*js
+*.js
 /classes/
 /out/
 /target/
