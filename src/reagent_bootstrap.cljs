@@ -1,4 +1,4 @@
-(ns reagent-bootstrap
+(ns reagent-bootstrap.core
   "This namespace contains some basic reagent bootstrap components"
   (:require [reagent.core :as reagent :refer [atom]]
             [cljs-uuid.core :as uuid]))
