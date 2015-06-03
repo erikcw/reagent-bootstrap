@@ -5,7 +5,6 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2311"]
                  [reagent "0.4.2"]
-                 [cljs-uuid "0.0.4"]
                  [im.chit/purnam.test "0.4.3"]
                  [prismatic/dommy "0.1.3"]]
 

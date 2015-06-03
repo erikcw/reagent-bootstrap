@@ -1,7 +1,6 @@
 (ns reagent-bootstrap.core
   "This namespace contains some basic reagent bootstrap components"
-  (:require [reagent.core :as reagent :refer [atom]]
-            [cljs-uuid.core :as uuid]))
+  (:require [reagent.core :as reagent :refer [atom]]))
 
 (def panel-styles {:default "panel-default"
                    :primary "panel-primary"
@@ -13,7 +12,7 @@
 
 ;; Utilities
 (defn rand-uuid-str []
-  (.-uuid (uuid/make-random)))
+  (str (random-uuid)))
 
 ;; HTML helpers
 (defn attrs-content [items]
